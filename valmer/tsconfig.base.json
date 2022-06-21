@@ -16,6 +16,7 @@
         "baseUrl": ".",
         "paths": {
             "@valmer/api": ["libs/api/src/index.ts"],
+            "@valmer/api-models": ["libs/api-models/src/index.ts"],
             "@valmer/store/cards": ["libs/store/cards/src/index.ts"],
             "@valmer/store/tasks": ["libs/store/tasks/src/index.ts"]
         }

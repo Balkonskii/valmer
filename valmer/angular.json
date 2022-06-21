@@ -3,6 +3,7 @@
     "version": 2,
     "projects": {
         "api": "libs/api",
+        "api-models": "libs/api-models",
         "store-cards": "libs/store/cards",
         "store-tasks": "libs/store/tasks",
         "valmer": "apps/valmer",
