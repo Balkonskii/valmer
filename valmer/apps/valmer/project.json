@@ -1,7 +1,7 @@
 {
     "projectType": "application",
     "sourceRoot": "apps/valmer/src",
-    "prefix": "valmer",
+    "prefix": "vm",
     "targets": {
         "build": {
             "executor": "@angular-devkit/build-angular:browser",

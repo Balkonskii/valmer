@@ -1,0 +1,22 @@
+{
+    "projectType": "library",
+    "sourceRoot": "libs/store/tasks/src",
+    "prefix": "vm",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/store/tasks"],
+            "options": {
+                "jestConfig": "libs/store/tasks/jest.config.ts",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/store/tasks/**/*.ts", "libs/store/tasks/**/*.html"]
+            }
+        }
+    },
+    "tags": ["store"]
+}
