@@ -1,7 +1,7 @@
 {
-  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
-  "version": 2,
-  "projects": {
-    "valmer-api": "apps/valmer-api"
-  }
+    "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+    "version": 2,
+    "projects": {
+        "valmer-api": "apps/valmer-api"
+    }
 }

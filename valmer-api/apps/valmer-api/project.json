@@ -1,52 +1,52 @@
 {
-  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
-  "sourceRoot": "apps/valmer-api/src",
-  "projectType": "application",
-  "targets": {
-    "build": {
-      "executor": "@nrwl/node:webpack",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/apps/valmer-api",
-        "main": "apps/valmer-api/src/main.ts",
-        "tsConfig": "apps/valmer-api/tsconfig.app.json",
-        "assets": ["apps/valmer-api/src/assets"]
-      },
-      "configurations": {
-        "production": {
-          "optimization": true,
-          "extractLicenses": true,
-          "inspect": false,
-          "fileReplacements": [
-            {
-              "replace": "apps/valmer-api/src/environments/environment.ts",
-              "with": "apps/valmer-api/src/environments/environment.prod.ts"
+    "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+    "sourceRoot": "apps/valmer-api/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/node:webpack",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/apps/valmer-api",
+                "main": "apps/valmer-api/src/main.ts",
+                "tsConfig": "apps/valmer-api/tsconfig.app.json",
+                "assets": ["apps/valmer-api/src/assets"]
+            },
+            "configurations": {
+                "production": {
+                    "optimization": true,
+                    "extractLicenses": true,
+                    "inspect": false,
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/valmer-api/src/environments/environment.ts",
+                            "with": "apps/valmer-api/src/environments/environment.prod.ts"
+                        }
+                    ]
+                }
             }
-          ]
+        },
+        "serve": {
+            "executor": "@nrwl/node:node",
+            "options": {
+                "buildTarget": "valmer-api:build"
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/valmer-api/**/*.ts"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/valmer-api"],
+            "options": {
+                "jestConfig": "apps/valmer-api/jest.config.ts",
+                "passWithNoTests": true
+            }
         }
-      }
     },
-    "serve": {
-      "executor": "@nrwl/node:node",
-      "options": {
-        "buildTarget": "valmer-api:build"
-      }
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/valmer-api/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/valmer-api"],
-      "options": {
-        "jestConfig": "apps/valmer-api/jest.config.ts",
-        "passWithNoTests": true
-      }
-    }
-  },
-  "tags": []
+    "tags": []
 }
