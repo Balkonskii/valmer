@@ -5,3 +5,4 @@ layers:
 - infrastructure
 - feature
 - util
+- core

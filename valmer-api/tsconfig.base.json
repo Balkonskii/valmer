@@ -14,7 +14,11 @@
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
-        "paths": {}
+        "paths": {
+            "@valmer-api/environment": ["libs/environment/src/index.ts"],
+            "@valmer-api/models": ["libs/models/src/index.ts"],
+            "@valmer-api/shared": ["libs/shared/src/index.ts"]
+        }
     },
     "exclude": ["node_modules", "tmp"]
 }

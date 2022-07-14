@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { EnvironmentModule } from '@valmer-api/environment';
+import { SharedModule, SiteValueService } from '@valmer-api/shared';
 
 @Module({
-    imports: [],
+    imports: [EnvironmentModule, SharedModule],
     controllers: [AppController],
-    providers: [AppService]
+    providers: [SiteValueService]
 })
 export class AppModule {}
