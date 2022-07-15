@@ -1,7 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ValueSource } from '@valmer-api/models';
-import { launch } from 'puppeteer';
+import { ElementHandle, launch, Page } from 'puppeteer';
 import { Config, ConfigToken } from '@valmer-api/environment';
+import { wait } from '../../utils';
 
 @Injectable()
 export class SiteValueService {
@@ -15,19 +16,12 @@ export class SiteValueService {
 
         const page = await browser.newPage();
         await page.goto(source.url);
-        await page.waitForNavigation({ waitUntil: 'networkidle2' });
-        console.log(1);
-
-        await new Promise<void>((resolve) => {
-            setTimeout(() => {
-                resolve();
-            }, 6000);
-        });
-
-        const elements = await page.$$(source.valueSelector);
-        console.log(2);
+        await page.setDefaultNavigationTimeout(60000);
+        if (source.waitUntil) {
+            await page.waitForNavigation({ waitUntil: source.waitUntil });
+        }
+        const elements = await this.waitForElements(source, page);
         const element = elements[0];
-        console.log(3);
 
         if (element) {
             const value = await element.getProperty('innerText');
@@ -35,5 +29,22 @@ export class SiteValueService {
         } else {
             return undefined;
         }
+    }
+
+    private async waitForElements(source: ValueSource, page: Page): Promise<ElementHandle<Element>[]> {
+        for (let i = 0; i < source.tryCount; i++) {
+            try {
+                const elements = await page.$$(source.valueSelector);
+                if (elements?.length) {
+                    return elements;
+                } else {
+                    await wait(source.tryTimeout);
+                }
+            } catch (error) {
+                await wait(source.tryTimeout);
+            }
+        }
+
+        throw new Error('Value was not found');
     }
 }
