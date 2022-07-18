@@ -15,8 +15,8 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
+            "@valmer-api/domain": ["libs/domain/src/index.ts"],
             "@valmer-api/environment": ["libs/environment/src/index.ts"],
-            "@valmer-api/models": ["libs/models/src/index.ts"],
             "@valmer-api/shared": ["libs/shared/src/index.ts"]
         },
         "forceConsistentCasingInFileNames": true,
