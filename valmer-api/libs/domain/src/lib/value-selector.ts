@@ -4,4 +4,5 @@ export interface ValueSelector {
     id: string;
     selector: string;
     type: ValueSelectorType | string;
+    isMain: boolean;
 }

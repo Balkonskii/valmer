@@ -1,3 +1,4 @@
 export enum ValueSelectorType {
-    Image = 'image'
+    Image = 'image',
+    Price = 'price'
 }

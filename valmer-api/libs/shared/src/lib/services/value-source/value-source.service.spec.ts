@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SourceValueService } from './source-value.service';
+import { ValueSourceService } from './value-source.service';
 
-describe('SourceValueService', () => {
-    let service: SourceValueService;
+describe('ValueSourceService', () => {
+    let service: ValueSourceService;
 
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
-            providers: [SourceValueService]
+            providers: [ValueSourceService]
         }).compile();
 
-        service = module.get<SourceValueService>(SourceValueService);
+        service = module.get<ValueSourceService>(ValueSourceService);
     });
 
     it('should be defined', () => {

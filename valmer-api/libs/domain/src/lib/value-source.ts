@@ -6,6 +6,7 @@ export interface ValueSource {
     url: string;
     loadTryCount: number;
     loadTryTimeout: number;
+    timeoutAfterNavigation?: number;
     waitUntil?: PuppeteerLifeCycleEvent;
-    selectors: ValueSelector;
+    selectors: ValueSelector[];
 }

@@ -4,7 +4,6 @@
     "projects": {
         "domain": "libs/domain",
         "environment": "libs/environment",
-        "models": "libs/models",
         "shared": "libs/shared",
         "valmer-api": "apps/valmer-api"
     }
