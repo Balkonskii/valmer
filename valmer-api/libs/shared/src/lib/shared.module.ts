@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
-import { SiteValueService } from './services';
 
 @Module({
     controllers: [],
-    providers: [SiteValueService],
+    providers: [],
     exports: []
 })
 export class SharedModule {}

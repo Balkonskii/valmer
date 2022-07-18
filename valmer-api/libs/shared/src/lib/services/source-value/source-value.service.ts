@@ -1,11 +1,10 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { ValueSource } from '@valmer-api/models';
 import { ElementHandle, launch, Page } from 'puppeteer';
-import { Config, ConfigToken } from '@valmer-api/environment';
 import { wait } from '../../utils';
 
 @Injectable()
-export class SiteValueService {
+export class SourceValueService {
     // constructor(@Inject(ConfigToken) private readonly config: Config) {}
 
     async getValue(source: ValueSource): Promise<string | undefined> {
