@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 
+import { ApiSharedModule } from '@valmer/api/shared';
+
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 
 @Module({
-    imports: [],
+    imports: [ApiSharedModule],
     controllers: [AppController],
-    providers: [AppService]
+    providers: []
 })
 export class AppModule {}

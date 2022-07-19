@@ -2,8 +2,11 @@
     "$schema": "./node_modules/nx/schemas/workspace-schema.json",
     "version": 2,
     "projects": {
+        "api-environment": "libs/api/environment",
+        "api-shared": "libs/api/shared",
         "common-domain": "libs/common/domain",
         "common-shared": "libs/common/shared",
-        "valmer": "apps/valmer"
+        "valmer": "apps/valmer",
+        "valmer-api": "apps/valmer-api"
     }
 }

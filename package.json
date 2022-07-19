@@ -4,9 +4,8 @@
     "license": "MIT",
     "scripts": {
         "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
-        "start": "nx serve",
-        "build": "nx build",
-        "test": "nx test",
+        "valmer:start": "nx run valmer:serve",
+        "valmer-api:start": "nx run valmer-api:serve",
         "lint:fix": "nx run-many --all --target=lint --fix",
         "lint:styles": "stylelint \"**/*.scss\"",
         "lint:styles:fix": "stylelint \"**/*.scss\" --fix",
