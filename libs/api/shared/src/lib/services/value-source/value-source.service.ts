@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ElementHandle, launch, Page } from 'puppeteer';
 
-import { Config, ConfigToken } from '@valmer/api/environment';
+import { type Config, ConfigToken } from '@valmer/api/environment';
 import { ValueSource } from '@valmer/common/domain';
 import { wait } from '@valmer/common/shared/utils';
 
