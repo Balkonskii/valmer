@@ -6,7 +6,6 @@
         "api-models": "libs/api-models",
         "store-cards": "libs/store/cards",
         "store-tasks": "libs/store/tasks",
-        "valmer": "apps/valmer",
-        "valmer-e2e": "apps/valmer-e2e"
+        "valmer": "apps/valmer"
     }
 }
