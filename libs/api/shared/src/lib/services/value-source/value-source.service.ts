@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ElementHandle, launch, Page } from 'puppeteer';
+
 import { Config, ConfigToken } from '@valmer/api/environment';
 import { ValueSource } from '@valmer/common/domain';
 import { wait } from '@valmer/common/shared/utils';
@@ -23,18 +24,19 @@ export class ValueSourceService {
             await wait(source.timeoutAfterNavigation);
         }
 
-        const elements = await this.waitForElements(source, page);
+        const elements = await ValueSourceService.waitForElements(source, page);
         const element = elements[0];
 
         if (element) {
             const value = await element.getProperty('innerText');
-            return await value.jsonValue();
+
+            return value.jsonValue();
         } else {
             return undefined;
         }
     }
 
-    private async waitForElements(source: ValueSource, page: Page): Promise<ElementHandle[]> {
+    private static async waitForElements(source: ValueSource, page: Page): Promise<ElementHandle[]> {
         const elementSelector = source.selectors.find((item) => item.isMain) || source.selectors[0];
 
         if (!elementSelector) {
