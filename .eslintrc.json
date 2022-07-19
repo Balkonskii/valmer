@@ -1,0 +1,58 @@
+{
+    "root": true,
+    "ignorePatterns": ["**/*"],
+    "plugins": ["import", "@nrwl/nx", "no-null"],
+    "parser": "@typescript-eslint/parser",
+    "settings": {
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+        }
+    },
+    "extends": ["@ptsecurity/eslint-config"],
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+            "rules": {
+                "no-null/no-null": 1,
+                "@nrwl/nx/enforce-module-boundaries": [
+                    "error",
+                    {
+                        "enforceBuildableLibDependency": true,
+                        "allow": [],
+                        "depConstraints": []
+                    }
+                ],
+                "@angular-eslint/use-component-view-encapsulation": "off",
+                "import/no-deprecated": "off",
+                "import/no-unassigned-import": [
+                    "error",
+                    {
+                        "allow": ["jest-preset-angular", "zone.js", "zone.js/**", "core-js/**"]
+                    }
+                ],
+                "@angular-eslint/no-host-metadata-property": [
+                    "error",
+                    {
+                        "allowStatic": true
+                    }
+                ],
+                "@typescript-eslint/no-empty-function": [
+                    "error",
+                    {
+                        "allow": ["arrowFunctions"]
+                    }
+                ]
+            }
+        },
+        {
+            "files": ["*.ts", "*.tsx"],
+            "extends": ["plugin:@nrwl/nx/typescript"],
+            "rules": {}
+        },
+        {
+            "files": ["*.js", "*.jsx"],
+            "extends": ["plugin:@nrwl/nx/javascript"],
+            "rules": {}
+        }
+    ]
+}

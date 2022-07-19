@@ -1,9 +1,0 @@
-layers:
-
-- web
-- domain
-- infrastructure
-- feature
-- util
-- core
-- database

@@ -1,0 +1,9 @@
+{
+    "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+    "version": 2,
+    "projects": {
+        "common-domain": "libs/common/domain",
+        "common-shared": "libs/common/shared",
+        "valmer": "apps/valmer"
+    }
+}

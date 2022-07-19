@@ -1,0 +1,34 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2020",
+        "module": "esnext",
+        "lib": ["es2020", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@valmer/api/environment": ["libs/api/environment/src/index.ts"],
+            "@valmer/api/shared": ["libs/api/shared/src/index.ts"],
+            "@valmer/common/domain": ["libs/common/domain/src/index.ts"],
+            "@valmer/common/shared/*": ["libs/common/shared/src/lib/*"],
+            "@valmer/domain": ["libs/domain/src/index.ts"],
+            "@valmer/store/cards": ["libs/store/cards/src/index.ts"],
+            "@valmer/store/tasks": ["libs/store/tasks/src/index.ts"]
+        },
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true
+    },
+    "exclude": ["node_modules", "tmp"]
+}

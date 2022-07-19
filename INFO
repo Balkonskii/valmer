@@ -1,0 +1,14 @@
+scope:ui
+scope:ui:store
+scope:ui:feature
+scope:api
+scope:api:feature
+scope:api:core
+
+scope:domain
+scope:infrastructure
+scope:feature
+scope:util
+scope:core
+scope:shared
+scope:database
